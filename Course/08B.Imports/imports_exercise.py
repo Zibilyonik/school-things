@@ -11,9 +11,12 @@
 #   2) pi rounded to 3 decimal places
 
 # TODO: write your imports here
-
+import math 
 # TODO: write your prints here
-
+numberss=math.sqrt(81)
+print(numberss)
+num2=round(math.pi, 3)
+print(num2)
 
 # ---------------------------------------------------------------------------
 # PART 2 – FROM ... IMPORT ...
@@ -26,12 +29,13 @@
 #   2) floor the result
 
 # TODO: write your imports here
-
+from math import sqrt , floor
 value = 50
 # TODO: compute root
-root = None
+root = sqrt(value)
 # TODO: compute floored
-floored = None
+floored=floor(root)
+
 
 print("sqrt(50) =", root)
 print("floor(sqrt(50)) =", floored)
@@ -47,10 +51,13 @@ print("floor(sqrt(50)) =", floored)
 # - Store the results in a list and print it
 
 # TODO: write your imports here
+import random as rnd
 
-rolls = []
+rolls=[]
+
 # TODO: add 10 random ints from 1 to 6
-
+for i in range(10):
+    rolls.append(rnd.randint(1,6))
 print("Rolls:", rolls)
 
 
@@ -67,10 +74,11 @@ print("Rolls:", rolls)
 #   3) my_utils.clamp(200, 0, 100)
 
 # TODO: write your import here
+import my_utils 
 
-print("Shout:", None)   # TODO
-print("Is even:", None) # TODO
-print("Clamp:", None)   # TODO
+print("Shout:", my_utils.shout("hello"))   # TODO
+print("Is even:", my_utils.is_even(123)) # TODO
+print("Clamp:", my_utils.clamp(200,0,100))   # TODO
 
 
 # ---------------------------------------------------------------------------
@@ -84,6 +92,7 @@ print("Clamp:", None)   # TODO
 # - Below is an example of a multi-line string:
 answer = """
 TODO: write your explanation here.
+Because system will not know which one of 2 RANDOM we are trying to import, as both of them hold different information, and located in the program simultaniojusly. Random = random , hodlding different values.
 """
 
 print(answer)

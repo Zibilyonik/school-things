@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def shopping():
     purchases = []
     """
@@ -53,7 +55,7 @@ def shopping():
             total_spent += item_cost
             print(f"{item_name} was purchased for {item_cost}PLN. "
                   f"You have {pocket_balance}PLN left.")
-            purchases.append((item_name, item_cost)) # Add the purchase to the list
+            purchases.append(item_name) # Add the purchase to the list
             # If money is gone and is 0 you get break.
             if pocket_balance == 0:
                 print("You have run out of money.")
@@ -63,11 +65,19 @@ def shopping():
             print(f"You don't have enough money to afford {item_name}.")
             print(f"You still have {pocket_balance}PLN left.")
 
+
+    UNIT_DIR = Path(__file__).parent
+    DATA_DIR = UNIT_DIR / "data"
+    notes_path = DATA_DIR / "the_shaoppingpurt"
+
+    with open(notes_path, "a") as f:
+        for p in purchases:
+            f.writelines(p+"\n")
+
     # Summary on your shopping
     print(f"Shopping complete. You have {pocket_balance}PLN remaining in your wallet, "
           f"you’ve spent {total_spent}PLN.")
 
 if __name__ == "__main__":
     shopping()
-
 

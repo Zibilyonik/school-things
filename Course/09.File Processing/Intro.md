@@ -202,3 +202,22 @@ python "Course/09.File Processing/file_processing_exercise.py"
 - Data from files starts as strings — convert types when needed.
 - `Path(__file__).parent` helps prevent path issues.
 - File processing turns your programs into tools that work with real data.
+
+
+
+##
+Modes: Different File Mode in Python
+Below are the different types of file modes in Python along with their description:
+
+‘r’	Read-only. Raises I/O error if file doesn't exist.
+‘r+’	Read and write. Raises I/O error if the file does not exist.
+‘w’	Write-only. Overwrites file if it exists, else creates a new one.
+‘w+’	Read and write. Overwrites file or creates new one.
+‘a’	Append-only. Adds data to end. Creates file if it doesn't exist.
+‘a+’	Read and append. Pointer at end. Creates file if it doesn't exist.
+‘rb’	Read in binary mode. File must exist.
+‘rb+’	Read and write in binary mode. File must exist.
+‘wb’	Write in binary. Overwrites or creates new.
+‘wb+’	Read and write in binary. Overwrites or creates new.
+‘ab’	Append in binary. Creates file if not exist.
+‘ab+’	Read and append in binary. Creates file if it does not exist.

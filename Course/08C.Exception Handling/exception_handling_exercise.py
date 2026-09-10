@@ -16,8 +16,14 @@
 number = None
 
 # TODO: write your loop here
-
-print("You entered:", number)
+while True:
+    try: 
+        number=int(input("Insert your passowrd:"))
+    except ValueError:
+        print("Enter numbers only")
+    else:
+        print("You entered:", number)
+        break
 
 
 # ---------------------------------------------------------------------------
@@ -34,6 +40,16 @@ print("You entered:", number)
 
 # TODO: write your loop here
 
+try:
+    a=int(input("Enter 1st number: "))
+    b=int(input("Enter 2nd number: "))
+    dividion=a/b
+except ValueError:
+    print("U didnt enter a whole number")
+except ZeroDivisionError:
+    print("Second number can not be 0")
+else:
+    print(dividion)
 
 # ---------------------------------------------------------------------------
 # PART 3 – VALUEERROR (parsing data safely)
@@ -50,10 +66,17 @@ print("You entered:", number)
 total = 0
 
 raw_values = ["10", "20", "hello", "30", "-5", "3.14", "40"]
+# for i in range(len(raw_values)):
+for value in raw_values: 
+    try: 
+        total += int(value)
+    except ValueError:
+        print(f"Skipping invalid value:", value)
+print(total)
 
 # TODO: write your code here
 
-print("Total of valid numbers:", total)
+
 
 
 # ---------------------------------------------------------------------------
@@ -88,7 +111,15 @@ scores = {
 }
 
 # TODO: write your code here
+try: 
+    name=input("Print name of the student: ")
+except KeyError:
+    print("Student not found.")
+else:
+    print(scores[name])
 
+name=input("Print name of the student: ")
+print=(dict.get(name))
 
 # ---------------------------------------------------------------------------
 # EXTENSION (optional)
